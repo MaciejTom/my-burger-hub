@@ -28,7 +28,7 @@ module.exports = {
         // the only required plugin option for WordPress is the GraphQL url.
         url:
           process.env.WPGRAPHQL_URL ||
-          `https://wpgatsbydemo.wpengine.com/graphql`,
+          `http://myburgerhub.local/graphql`,
       },
     },
 
@@ -67,6 +67,8 @@ module.exports = {
         icon: `content/assets/gatsby-icon.png`,
       },
     },
+    
+    `gatsby-plugin-styled-components`,
 
     // See https://www.gatsbyjs.com/plugins/gatsby-plugin-react-helmet/?=gatsby-plugin-react-helmet
     `gatsby-plugin-react-helmet`,
