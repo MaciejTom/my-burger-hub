@@ -26,6 +26,7 @@ html {
 
 body {
   margin: 0;
+  font-family: "Kanit", Times, serif;
 }
 
 /**

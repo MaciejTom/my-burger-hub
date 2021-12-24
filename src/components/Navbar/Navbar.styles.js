@@ -42,6 +42,5 @@ export const NavIcon = styled.div`
 
 export const Bars = styled(FaHamburger)`
   font-size: 2rem;
-  transform: translate(-50%, -15%);
+  transform: translate(-50%,-75%);
 `;
-  

@@ -8,21 +8,7 @@ import Hero from "../Hero"
 import { GlobalStyles } from "./Layout.styles"
 
 const Layout = ({ isHomePage, children }) => {
-  const {
-    wp: {
-      generalSettings: { title },
-    },
-  } = useStaticQuery(graphql`
-    query LayoutQuery {
-      wp {
-        generalSettings {
-          title
-          description
-        }
-      }
-    }
-  `)
-
+ 
   return (
     <>
       <GlobalStyles />

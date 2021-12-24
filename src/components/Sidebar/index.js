@@ -1,4 +1,6 @@
-import React from 'react';
+import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
+//Styles
 import {
   SidebarContainer,
   Icon,
@@ -6,25 +8,32 @@ import {
   SidebarMenu,
   SidebarLink,
   SidebarRoute,
-  SideBtnWrap
-} from './Sidebar.styles';
+  SideBtnWrap,
+} from "./Sidebar.styles"
+//Hooks
+import { useMenuQuery } from '../../hooks/UseMenuQuery'
 
 const Sidebar = ({ isOpen, toggle }) => {
+  
+  const { wp, wpMenu } = useMenuQuery();
+  const menuNodes = wpMenu.menuItems.nodes
+  
+
   return (
     <SidebarContainer isOpen={isOpen} onClick={toggle}>
       <Icon onClick={toggle}>
         <CloseIcon />
       </Icon>
-      <SidebarMenu>
-        <SidebarLink to='/'>Pizzas</SidebarLink>
-        <SidebarLink to='/'>Desserts</SidebarLink>
-        <SidebarLink to='/'>Full Menu</SidebarLink>
+      <SidebarMenu menuLength={menuNodes.length}>
+        {menuNodes.map(node => 
+          <SidebarLink key={node.id} to={node.url}>{node.label}</SidebarLink>
+        )}
       </SidebarMenu>
       <SideBtnWrap>
-        <SidebarRoute to='/'>Order Now</SidebarRoute>
+        <SidebarRoute to="/">Order Now</SidebarRoute>
       </SideBtnWrap>
     </SidebarContainer>
-  );
-};
+  )
+}
 
-export default Sidebar;
+export default Sidebar

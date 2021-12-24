@@ -7,6 +7,11 @@
  */
 
 module.exports = {
+  siteMetadata: {
+    title: `My burger hub`,
+    description: `This is my burger hub`,
+    author: `Maciej Tomaszewicz`,
+  },
   /**
    * Adding plugins to this array adds them to your Gatsby site.
    *
@@ -26,9 +31,7 @@ module.exports = {
       resolve: `gatsby-source-wordpress`,
       options: {
         // the only required plugin option for WordPress is the GraphQL url.
-        url:
-          process.env.WPGRAPHQL_URL ||
-          `http://myburgerhub.local/graphql`,
+        url: process.env.WPGRAPHQL_URL || `http://myburgerhub.local/graphql`,
       },
     },
 
@@ -54,6 +57,7 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-image`,
+    `gatsby-background-image`,
     {
       // See https://www.gatsbyjs.com/plugins/gatsby-plugin-manifest/?=gatsby-plugin-manifest
       resolve: `gatsby-plugin-manifest`,
@@ -67,8 +71,15 @@ module.exports = {
         icon: `content/assets/gatsby-icon.png`,
       },
     },
-    
+
     `gatsby-plugin-styled-components`,
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [`Kanit\:200, 400, 500, 600, 700`],
+        display: `swap`,
+      },
+    },
 
     // See https://www.gatsbyjs.com/plugins/gatsby-plugin-react-helmet/?=gatsby-plugin-react-helmet
     `gatsby-plugin-react-helmet`,

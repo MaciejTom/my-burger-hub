@@ -1,36 +1,53 @@
-import React, { useState } from 'react';
-import Navbar from '../Navbar';
-import Sidebar from '../Sidebar';
+import React, { useState } from "react"
+//Components
+import Navbar from "../Navbar"
+import Sidebar from "../Sidebar"
+//Styles
 import {
-  HeroContainer,
+  Overlay,
   HeroContent,
   HeroItems,
   HeroH1,
   HeroP,
-  HeroBtn
-} from './Hero.styles';
+  HeroBtn,
+} from "./Hero.styles"
+//GraphQL
+import { useHeroQuery } from "../../hooks/UseHeroQuery"
+//Image plugins
+import { getImage, GatsbyImage } from "gatsby-plugin-image"
+import BackgroundImage from "gatsby-background-image"
+import { convertToBgImage } from "gbimage-bridge"
 
 const Hero = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false)
 
   const toggle = () => {
-    setIsOpen(!isOpen);
-  };
+    setIsOpen(!isOpen)
+  }
+
+  const {
+    wpPage: { ACF_Hero_Component: data },
+  } = useHeroQuery()
+
+  const image = getImage(data.heroImage.localFile.childImageSharp)
+
+  const bgImage = convertToBgImage(image)
 
   return (
-    
-    <HeroContainer>
-      <Navbar toggle={toggle} />
-      <Sidebar isOpen={isOpen} toggle={toggle} /> 
-      <HeroContent>
-        <HeroItems>
-          <HeroH1>Greatest Burger Ever</HeroH1>
-          <HeroP>Ready in 60 seconds</HeroP>
-          <HeroBtn>Place Order</HeroBtn>
-        </HeroItems>
-      </HeroContent>
-    </HeroContainer>
-  );
-};
+    <BackgroundImage {...bgImage} style={{ height: "100%" }}>
+      <Overlay>
+        <Navbar toggle={toggle} />
+        <Sidebar isOpen={isOpen} toggle={toggle} />
+        <HeroContent>
+          <HeroItems>
+            <HeroH1>{data.heroText}</HeroH1>
+            <HeroP>{data.heroSubtext}</HeroP>
+            <HeroBtn>Place Order</HeroBtn>
+          </HeroItems>
+        </HeroContent>
+        </Overlay>
+    </BackgroundImage>
+  )
+}
 
-export default Hero;
+export default Hero

@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-wordpress-blog",
+  "name": "My-burger-hub",
   "private": true,
   "description": "A starter for a blog powered by Gatsby and Markdown",
   "version": "1.0.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com> and Tyler Barnes <tylerdbarnes@gmail.com>",
+  "author": "Maciej Tomaszewicz",
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   },
@@ -29,6 +29,8 @@
   "dependencies": {
     "babel-plugin-styled-components": "^2.0.2",
     "gatsby": "^4.0.0",
+    "gatsby-background-image": "^1.6.0",
+    "gatsby-plugin-google-fonts": "^1.0.1",
     "gatsby-plugin-image": "^2.0.0",
     "gatsby-plugin-manifest": "^4.0.0",
     "gatsby-plugin-offline": "^5.0.0",
@@ -38,6 +40,7 @@
     "gatsby-source-filesystem": "^4.0.0",
     "gatsby-source-wordpress": "^6.0.0",
     "gatsby-transformer-sharp": "^4.0.0",
+    "gbimage-bridge": "^0.2.0",
     "html-react-parser": "^1.1.1",
     "lodash": "^4.17.20",
     "postcss": "^8.2.10",
