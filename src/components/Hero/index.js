@@ -14,7 +14,7 @@ import {
 //GraphQL
 import { useHeroQuery } from "../../hooks/UseHeroQuery"
 //Image plugins
-import { getImage, GatsbyImage } from "gatsby-plugin-image"
+import { getImage } from "gatsby-plugin-image"
 import BackgroundImage from "gatsby-background-image"
 import { convertToBgImage } from "gbimage-bridge"
 
@@ -29,12 +29,13 @@ const Hero = () => {
     wpPage: { ACF_Hero_Component: data },
   } = useHeroQuery()
 
+
   const image = getImage(data.heroImage.localFile.childImageSharp)
 
   const bgImage = convertToBgImage(image)
 
   return (
-    <BackgroundImage {...bgImage} style={{ height: "100%" }}>
+    <BackgroundImage {...bgImage} >
       <Overlay>
         <Navbar toggle={toggle} />
         <Sidebar isOpen={isOpen} toggle={toggle} />

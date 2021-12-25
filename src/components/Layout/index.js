@@ -8,11 +8,12 @@ import Hero from "../Hero"
 import { GlobalStyles } from "./Layout.styles"
 
 const Layout = ({ isHomePage, children }) => {
- 
+  console.log(isHomePage)
   return (
     <>
       <GlobalStyles />
-      <Hero/>
+      <Hero />
+
       <main>{children}</main>
 
       <Footer />

@@ -1,12 +1,5 @@
 import styled from 'styled-components';
 
-//Image plugins
-import { getImage, GatsbyImage } from "gatsby-plugin-image"
-import BackgroundImage from "gatsby-background-image"
-import { convertToBgImage } from "gbimage-bridge"
-
-
-
 export const Overlay = styled.div`
   background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1));
   

@@ -1,17 +1,15 @@
 import { useStaticQuery, graphql } from "gatsby"
 
-export const useHeroQuery = () => {
+export const UseBurgerOTD = () => {
   const data = useStaticQuery(graphql`
-    query HeroQuery {
+    query BurgerQuery {
       wpPage(databaseId: { eq: 40 }) {
-        id
-        ACF_Hero_Component {
-          heroSubtext
-          heroText
-          heroImage {
-            sourceUrl
+        ACF_BurgerOfTheDay_Component {
+          burgerSubtext
+          burgerText
+          fieldGroupName
+          burgerImage {
             localFile {
-              id
               childImageSharp {
                 gatsbyImageData(
                   placeholder: BLURRED
