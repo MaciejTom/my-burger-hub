@@ -12,7 +12,7 @@ const BurgerOfTheDay = () => {
     wpPage: { ACF_BurgerOfTheDay_Component: data },
   } = UseBurgerOTD()
 
-  console.log(data)
+
 
   const image = getImage(data.burgerImage.localFile.childImageSharp)
 

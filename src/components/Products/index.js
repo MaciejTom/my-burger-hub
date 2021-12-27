@@ -11,16 +11,18 @@ import {
   ProductDesc,
   ProductPrice,
   ProductButton,
-} from "./ProductsElements"
+} from "./ProductsElements.styles"
 //Image plugin
 import { getImage } from "gatsby-plugin-image"
 
-const Products = ({ heading, products }) => {
+const Products = ({ heading, products, isBurger, full }) => {
+  const threeProducts = full ? products.slice(0) : products.slice(0, 3)
+
   return (
-    <ProductsContainer>
-      <ProductsHeading>{heading}</ProductsHeading>
+    <ProductsContainer full={full} isBurger={isBurger}>
+      {heading && <ProductsHeading>{heading}</ProductsHeading>}
       <ProductWrapper>
-        {products.map(product => {
+        {threeProducts.map(product => {
           const productImage = getImage(
             product.ACF_Products.productPhoto.localFile.childImageSharp
           )
@@ -30,11 +32,11 @@ const Products = ({ heading, products }) => {
 
               <ProductInfo>
                 <ProductTitle>{product.ACF_Products.productName}</ProductTitle>
-                <ProductDesc>
+                <ProductDesc isBurger={isBurger}>
                   {product.ACF_Products.productIngredients}
                 </ProductDesc>
                 <ProductPrice>
-                  {product.ACF_Products.productName.price}
+                  ${product.ACF_Products.productPrice}
                 </ProductPrice>
                 <ProductButton>Add to cart</ProductButton>
               </ProductInfo>

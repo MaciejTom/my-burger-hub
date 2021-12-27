@@ -1,38 +1,31 @@
 import React from "react"
-import { graphql } from "gatsby"
 //Components
 import Layout from "../components/Layout"
 import SEO from "../components/seo"
 import Products from "../components/Products"
 import BurgerOfTheDay from "../components/BurgerOfTheDay"
+import LatestBlogPost from "../components/LatestBlogPost"
 //Hooks
-import {UseProductsQuery} from "../hooks/UseProductsQuery"
+import { UseProductsQuery } from "../hooks/UseProductsQuery"
 
-export default function Home({ data }) {
+export default function Home({ isHomePage, data, location }) {
+  const {
+    allWpExtra: { nodes: extras },
+    allWpBurger: { nodes: burgers },
+  } = UseProductsQuery()
 
-  const {allWpExtra : {nodes : extras}, allWpBurger : {nodes : burgers}} = UseProductsQuery()
-  const something = UseProductsQuery()
-  console.log(extras)
-  console.log(burgers)
   return (
-    <Layout>
+    <Layout location={location}>
       <SEO title="home" />
-   
-      <Products heading='Choose your favorite' products={burgers} />
-      <BurgerOfTheDay /> 
-      <Products heading='Sweet Treats for You' products={extras} />
+
+      <Products
+        heading="Choose your favorite"
+        products={burgers}
+        isBurger={true}
+      />
+      <BurgerOfTheDay />
+      <Products heading="Extras for You" products={extras} />
+      <LatestBlogPost />
     </Layout>
   )
 }
-
-// export const pageQuery = graphql`
-//   query {
-//     allWpPost(sort: { fields: [date] }) {
-//       nodes {
-//         title
-//         excerpt
-//         slug
-//       }
-//     }
-//   }
-// `

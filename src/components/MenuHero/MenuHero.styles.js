@@ -4,7 +4,7 @@ import BackgroundImage from "gatsby-background-image"
 export const BurgerContainer = styled(BackgroundImage)`
 
   height: 100vh;
-  max-height: 500px;
+  max-height: 300px;
   background-position: center;
   background-size: cover;
   display: flex;
