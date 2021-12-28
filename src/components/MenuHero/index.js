@@ -7,21 +7,21 @@ import { getImage } from "gatsby-plugin-image"
 
 import { convertToBgImage } from "gbimage-bridge"
 
-const MenuHero = () => {
-  const data = UseMenuHeroQuery()
-  const {
-    wpPage: { title },
-    wpPage: {
-      featuredImage: {
-        node: {
-          localFile: { childImageSharp: childImage },
-        },
-      },
-    },
-  } = UseMenuHeroQuery()
+const MenuHero = ({title, childImage}) => {
+  
+  // const {
+  //   wpPage: { title },
+  //   wpPage: {
+  //     featuredImage: {
+  //       node: {
+  //         localFile: { childImageSharp: childImage },
+  //       },
+  //     },
+  //   },
+  // } = UseMenuHeroQuery()
 
-  console.log(data)
-  console.log(childImage)
+  // console.log(data)
+  // console.log(childImage)
 
   const image = getImage(childImage)
 

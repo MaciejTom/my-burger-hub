@@ -4,7 +4,7 @@ import { FaHamburger } from 'react-icons/fa';
 
 
 export const Nav = styled.nav`
-  background: ${(props) => props.isHomePage ? "transparent" : "black"};
+  background: ${(props) => props.isHomePage ? "transparent" : "#0d0909"};
   height: 80px;
   display: flex;
   justify-content: center;

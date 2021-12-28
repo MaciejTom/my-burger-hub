@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Overlay = styled.div`
   background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1));
-  
+  padding: 0 2rem;
 `;
 
 export const HeroContent = styled.div`
@@ -18,7 +18,7 @@ export const HeroItems = styled.div`
   align-items: flex-start;
   height: 100vh;
   max-height: 100%;
-  padding: 0 2rem;
+  
   width: 650px;
   color: #fff;
   text-transform: uppercase;

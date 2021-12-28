@@ -76,7 +76,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [`Kanit\:200, 400, 500, 600, 700`],
+        fonts: [`Kanit\:200, 400, 500, 600, 700, 800, 900`],
         display: `swap`,
       },
     },

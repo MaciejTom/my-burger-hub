@@ -8,7 +8,7 @@ import Seo from "../components/seo"
 
 const BlogIndex = ({
   data,
-  pageContext: { nextPagePath, previousPagePath },
+  // pageContext: { nextPagePath, previousPagePath },
 }) => {
   const posts = data.allWpPost.nodes
 
@@ -57,13 +57,13 @@ const BlogIndex = ({
         })}
       </ol>
 
-      {previousPagePath && (
+      {/* {previousPagePath && (
         <>
           <Link to={previousPagePath}>Previous page</Link>
           <br />
         </>
       )}
-      {nextPagePath && <Link to={nextPagePath}>Next page</Link>}
+      {nextPagePath && <Link to={nextPagePath}>Next page</Link>} */}
     </Layout>
   )
 }
