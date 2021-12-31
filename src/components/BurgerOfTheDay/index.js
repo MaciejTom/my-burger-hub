@@ -1,10 +1,10 @@
 import React from "react"
-import { BurgerContainer, BurgerButton, Overlay } from "./BurgerOfTheDay.styles"
+//Styles
+import { BurgerContainer, BurgerButton, Overlay, BurgerH1, BurgerP } from "./BurgerOfTheDay.styles"
 //GraphQL
 import { UseBurgerOTD } from "../../hooks/UseBurgerOTD"
 //Image plugins
 import { getImage } from "gatsby-plugin-image"
-
 import { convertToBgImage } from "gbimage-bridge"
 
 const BurgerOfTheDay = () => {
@@ -12,20 +12,16 @@ const BurgerOfTheDay = () => {
     wpPage: { ACF_BurgerOfTheDay_Component: data },
   } = UseBurgerOTD()
 
-
-
   const image = getImage(data.burgerImage.localFile.childImageSharp)
 
   const bgImage = convertToBgImage(image)
 
   return (
     <Overlay>
-    <BurgerContainer {...bgImage}>
-     
-        <h1>{data.burgerText}</h1>
-        <p>{data.burgerSubtext}</p>
-        <BurgerButton>Order Now</BurgerButton>
-      
+    <BurgerContainer {...bgImage}>     
+        <BurgerH1>{data.burgerText}</BurgerH1>
+        <BurgerP>{data.burgerSubtext}</BurgerP>
+        <BurgerButton to="/menu">Order Now</BurgerButton>      
     </BurgerContainer>
     </Overlay>
   )

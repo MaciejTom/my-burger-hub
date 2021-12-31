@@ -1,5 +1,4 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
 //Styles
 import {
   SidebarContainer,
@@ -15,9 +14,8 @@ import { useMenuQuery } from '../../hooks/UseMenuQuery'
 
 const Sidebar = ({ isOpen, toggle }) => {
   
-  const { wp, wpMenu } = useMenuQuery();
-  const menuNodes = wpMenu.menuItems.nodes
-  
+  const { wpMenu } = useMenuQuery();
+  const menuNodes = wpMenu.menuItems.nodes 
 
   return (
     <SidebarContainer isOpen={isOpen} onClick={toggle}>
@@ -30,7 +28,7 @@ const Sidebar = ({ isOpen, toggle }) => {
         )}
       </SidebarMenu>
       <SideBtnWrap>
-        <SidebarRoute to="/">Order Now</SidebarRoute>
+        <SidebarRoute to="/menu">Order Now</SidebarRoute>
       </SideBtnWrap>
     </SidebarContainer>
   )

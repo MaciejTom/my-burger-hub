@@ -71,7 +71,7 @@ module.exports = {
         icon: `content/assets/gatsby-icon.png`,
       },
     },
-
+   
     `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-plugin-google-fonts`,

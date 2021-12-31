@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import {Link} from 'gatsby';
 
 export const Overlay = styled.div`
   background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1));
@@ -33,7 +34,8 @@ export const HeroItems = styled.div`
 export const HeroH1 = styled.h1`
   font-size: clamp(2.5rem, 10vw, 5rem);
   margin-bottom: 1rem;
-  box-shadow: 3px 5px #e9ba23;
+  box-shadow: 3px clamp(1px, 2.5vw, 8px) #e9ba23;
+  border-radius: 3px 3px 35px 3px;
   letter-spacing: 3px;
 `;
 
@@ -42,13 +44,16 @@ export const HeroP = styled.p`
   margin-bottom: 2rem;
 `;
 
-export const HeroBtn = styled.button`
+export const HeroBtn = styled(Link)`
   font-size: 1.4rem;
   padding: 1rem 4rem;
   border: none;
   background: #e31837;
   color: #fff;
   transition: 0.2s ease-out;
+  text-transform: capitalize;
+  font-weight: 400;
+  text-decoration: none;
 
   &:hover {
     background: #ffc500;

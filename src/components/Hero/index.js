@@ -47,7 +47,7 @@ const Hero = ({ location }) => {
             <HeroItems>
               <HeroH1>{data.heroText}</HeroH1>
               <HeroP>{data.heroSubtext}</HeroP>
-              <HeroBtn>Place Order</HeroBtn>
+              <HeroBtn to="/menu">Place order</HeroBtn>
             </HeroItems>
           </HeroContent>
         </Overlay>

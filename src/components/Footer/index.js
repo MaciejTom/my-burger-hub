@@ -1,11 +1,10 @@
-import React from 'react';
-import {
-  FaFacebook,
-  FaInstagram,
-  FaYoutube,
-  FaTwitter,
-  FaLinkedin
-} from 'react-icons/fa';
+import React from "react"
+//Components
+import { SocialLinks } from "../SocialLinks"
+//GraphQL
+import { UseTitleQuery } from "../../hooks/UseTitleQuery"
+import { UseSocialQuery } from "../../hooks/UseSocialQuery"
+
 import {
   FooterContainer,
   FooterWrap,
@@ -13,44 +12,34 @@ import {
   SocialMediaWrap,
   SocialLogo,
   SocialIcons,
-  SocialIconLink
-} from './Footer.styles'; 
+  SocialIconLink,
+} from "./Footer.styles"
 
 const Footer = () => {
+  const {
+    wp: {
+      allSettings: { generalSettingsTitle: title },
+    },
+  } = UseTitleQuery()
+
+  const {
+    wpPage: { ACF_Social: socials },
+  } = UseSocialQuery()
+
   return (
-    
     <FooterContainer>
       <FooterWrap>
         <SocialMedia>
           <SocialMediaWrap>
-            <SocialLogo to='/'>Burger</SocialLogo>
+            <SocialLogo to="/">{title}</SocialLogo>
             <SocialIcons>
-              <SocialIconLink href='/' target='_blank' aria-label='Facebook'>
-                <FaFacebook />
-              </SocialIconLink>
-              <SocialIconLink href='/' target='_blank' aria-label='Instagram'>
-                <FaInstagram />
-              </SocialIconLink>
-              <SocialIconLink href='/' target='_blank' aria-label='Youtube'>
-                <FaYoutube />
-              </SocialIconLink>
-              <SocialIconLink
-                href='//www.twitter.com/briandesignz'
-                target='_blank'
-                aria-label='Twitter'
-                rel='noopener noreferrer'
-              >
-                <FaTwitter />
-              </SocialIconLink>
-              <SocialIconLink href='/' target='_blank' aria-label='Linkedin'>
-                <FaLinkedin />
-              </SocialIconLink>
+              <SocialLinks socials={socials} />
             </SocialIcons>
           </SocialMediaWrap>
         </SocialMedia>
       </FooterWrap>
     </FooterContainer>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer

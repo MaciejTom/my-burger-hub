@@ -1,14 +1,19 @@
 import React from 'react';
-import { Nav, NavIcon, NavLink, Bars } from './Navbar.styles';
+//Styles
+import { Nav, NavIcon, NavLink, Bars, NavbarP } from './Navbar.styles';
+//Hooks
+import {UseTitleQuery} from '../../hooks/UseTitleQuery'
 
 const Navbar = ({ toggle, isHomePage }) => {
-  console.log(isHomePage)
+ 
+const {wp: {allSettings: {generalSettingsTitle: title}}} = UseTitleQuery();
+
   return (
     <>
       <Nav isHomePage={isHomePage}>
-        <NavLink to='/'>Burger</NavLink>
+        <NavLink to='/'>{title}</NavLink>
         <NavIcon onClick={toggle}>
-          <p>Menu</p>
+          <NavbarP>Menu</NavbarP>
           <Bars />
         </NavIcon>
       </Nav>

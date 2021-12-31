@@ -8,8 +8,7 @@ import Seo from "../components/seo"
 
 const BlogIndex = ({
   data,
-  // pageContext: { nextPagePath, previousPagePath },
-}) => {
+  }) => {
   const posts = data.allWpPost.nodes
 
   if (!posts.length) {
@@ -56,14 +55,6 @@ const BlogIndex = ({
           )
         })}
       </ol>
-
-      {/* {previousPagePath && (
-        <>
-          <Link to={previousPagePath}>Previous page</Link>
-          <br />
-        </>
-      )}
-      {nextPagePath && <Link to={nextPagePath}>Next page</Link>} */}
     </Layout>
   )
 }

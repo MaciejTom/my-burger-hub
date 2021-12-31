@@ -1,7 +1,8 @@
 import React from "react"
-
+//Hooks
 import { UseLatestBlogPost } from "../../hooks/UseLatestBlogPost"
-import { PostContainer, PostWrapper, BlogBtn } from "./LatestBlogPost.styles"
+//Styles
+import { PostContainer, PostWrapper, BlogBtn, PostH2, PostH4 } from "./LatestBlogPost.styles"
 
 const LatestBlogPost = () => {
   const data = UseLatestBlogPost()
@@ -10,8 +11,8 @@ const LatestBlogPost = () => {
     
     <PostContainer>
       <PostWrapper>
-      <h2>Latest Blog Post</h2>
-      <h4>{data.allWpPost.edges[0].node.title}</h4>
+      <PostH2>Latest Blog Post</PostH2>
+      <PostH4>{data.allWpPost.edges[0].node.title}</PostH4>
       <div
         dangerouslySetInnerHTML={{
           __html: data.allWpPost.edges[0].node.excerpt,

@@ -1,15 +1,14 @@
-import styled from 'styled-components';
-import { Link } from 'gatsby';
-import { FaHamburger } from 'react-icons/fa';
-
+import styled from "styled-components"
+import { Link } from "gatsby"
+import { FaHamburger } from "react-icons/fa"
 
 export const Nav = styled.nav`
-  background: ${(props) => props.isHomePage ? "transparent" : "#0d0909"};
+  background: ${props => (props.isHomePage ? "transparent" : "#0d0909")};
   height: 80px;
   display: flex;
   justify-content: center;
   font-weight: 700;
-`;
+`
 
 export const NavLink = styled(Link)`
   color: #fff;
@@ -19,12 +18,12 @@ export const NavLink = styled(Link)`
   text-decoration: none;
   cursor: pointer;
 
-  @media screen and (max-width: 400px) {
+  @media screen and (max-width: 500px) {
     position: absolute;
-    top: 10px;
+    top: 24px;
     left: 25px;
   }
-`;
+`
 
 export const NavIcon = styled.div`
   display: block;
@@ -33,14 +32,13 @@ export const NavIcon = styled.div`
   right: 0;
   cursor: pointer;
   color: #fff;
+`
 
-  p {
-    transform: translate(-175%, 100%);
-    font-weight: bold;
-  }
-`;
-
+export const NavbarP = styled.p`
+  transform: translate(-175%, 100%);
+  font-weight: bold;
+`
 export const Bars = styled(FaHamburger)`
   font-size: 2rem;
-  transform: translate(-50%,-75%);
-`;
+  transform: translate(-50%, -75%);
+`

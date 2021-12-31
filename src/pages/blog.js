@@ -1,4 +1,5 @@
 import React from "react"
+//Gatsby
 import { graphql } from "gatsby"
 //Components
 import Layout from "../components/layout"
@@ -24,10 +25,7 @@ export default function Blog({ data }) {
     <Layout>
       <SEO title="home" />
       <MenuHero title={title} childImage={childImage} />
-
-      <Posts postsData={postsData}/>
-
-      
+      <Posts postsData={postsData}/>      
     </Layout>
   )
 }

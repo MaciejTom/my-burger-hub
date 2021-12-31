@@ -28,8 +28,7 @@ const Products = ({ heading, products, isBurger, full }) => {
           )
           return (
             <ProductCard key={product.id}>
-              <ProductImg image={productImage} />
-
+              <ProductImg image={productImage} alt={product.ACF_Products.productPhoto.altText}/>
               <ProductInfo>
                 <ProductTitle>{product.ACF_Products.productName}</ProductTitle>
                 <ProductDesc isBurger={isBurger}>
@@ -38,7 +37,9 @@ const Products = ({ heading, products, isBurger, full }) => {
                 <ProductPrice>
                   ${product.ACF_Products.productPrice}
                 </ProductPrice>
-                <ProductButton>Add to cart</ProductButton>
+                <ProductButton to={full ? "#" : "/menu"}>
+                  Add to cart
+                </ProductButton>
               </ProductInfo>
             </ProductCard>
           )

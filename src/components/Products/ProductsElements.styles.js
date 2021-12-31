@@ -1,8 +1,8 @@
 import styled from "styled-components"
 import { GatsbyImage } from "gatsby-plugin-image"
+import {Link} from 'gatsby'
 
 export const ProductsContainer = styled.div`
-  /* width: 100vw; */
   min-height: 100vh;
   padding: ${(props) => (props.full && !props.isBurger) ? "1rem" : "4rem"} calc((100vw - 1300px) / 2) 2rem calc((100vw - 1300px) / 2);
   background: #150f0f;
@@ -28,7 +28,8 @@ export const ProductImg = styled(GatsbyImage)`
   height: 300px;
   min-width: 300px;
   max-width: 100%;
-  box-shadow: 8px 8px #fdc500;
+  box-shadow: 9px 9px #fdc500;
+    border-radius: 3px 3px 35px 3px;
 `
 
 export const ProductsHeading = styled.h2`
@@ -55,8 +56,7 @@ export const ProductDesc = styled.p`
   margin-bottom: 1rem;
   @media (min-width: 730px) {
    min-height: ${props => (props.isBurger && "65px")} }
-  }
-  
+  }  
 `
 
 export const ProductPrice = styled.p`
@@ -64,13 +64,14 @@ export const ProductPrice = styled.p`
   font-size: 2rem;
 `
 
-export const ProductButton = styled.button`
+export const ProductButton = styled(Link)`
   font-size: 1rem;
-  padding: 1rem 4rem;
+  padding: 0.7rem 4rem;
   border: none;
   background: #e31837;
   color: #fff;
   transition: 0.2 ease-out;
+  text-decoration: none;
 
   &:hover {
     background: #ffc500;

@@ -1,8 +1,12 @@
 import React from "react"
+//Gatbsy
 import { Link, graphql } from "gatsby"
+//Image plugins
 import { GatsbyImage } from "gatsby-plugin-image"
-import parse from "html-react-parser"
+//Styles
 import styled from "styled-components"
+
+import parse from "html-react-parser"
 
 // We're using Gutenberg so we need the block styles
 // these are copied into this project due to a conflict in the postCSS
@@ -12,7 +16,7 @@ import styled from "styled-components"
 // import "../css/@wordpress/block-library/build-style/style.css"
 // import "../css/@wordpress/block-library/build-style/theme.css"
 
-import Bio from "../components/bio"
+import MenuHero from "../components/MenuHero"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
@@ -26,33 +30,45 @@ const PostContent = styled.article`
   margin-top: 20px;
   max-width: 1180px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 1.2rem;
   text-align: center;
-  h1 {
-    font-size: clamp(2rem, 2.5vw, 3rem);
-    box-shadow: 4px 6px #fdc500;
-    display: inline-block;
-    padding: 1rem;
+`
+const PostSection = styled.section`
+  display: flex;
+  @media (max-width: 1200px) {
+    flex-direction: column;
   }
 `
-const PrevNextList = styled.nav`
-  padding: 4rem;
-  ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    list-style: none;
-    padding: 0;
-    a {
-      color: white;
-      text-decoration: none;
-    }
+const PostText = styled.section`
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  padding: 2rem;
+  @media (max-width: 1200px) {
+    padding: 0 0 2rem 0;
+  }
+`
+const PrevNextNav = styled.nav`
+  padding: clamp(1rem, 2.5vw, 4rem);
+`
+const NextPostList = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  list-style: none;
+  padding: 0;
+  a {
+    color: white;
+    text-decoration: none;
   }
 `
 const FeaturedImage = styled(GatsbyImage)`
   width: 100%;
-  max-width: 500px; 
-
+  max-width: 500px;
+  flex-shrink: 0;
+  box-shadow: 8px 8px #fdc500;
+  border-radius: 3px 3px 35px 3px;
+  @media (max-width: 1200px) {
+    align-self: center;
+  }
 `
 
 const BlogPostTemplate = ({ data: { previous, next, post } }) => {
@@ -60,80 +76,47 @@ const BlogPostTemplate = ({ data: { previous, next, post } }) => {
     data: post.featuredImage?.node?.localFile?.childImageSharp?.gatsbyImageData,
     alt: post.featuredImage?.node?.alt || ``,
   }
+  const backgroundImage =
+    post.ACF_Blog_Post_Image.blogBackground.localFile.childImageSharp
 
   return (
     <Layout>
-       <Seo title={post.title} description={post.excerpt} />
+      <Seo title={post.title} description={post.excerpt} />
+      <MenuHero title={post.title} childImage={backgroundImage} />
       <Wrapper>
         <PostContent>
-          <h1 itemProp="headline">{parse(post.title)}</h1>
+          <PostSection>
+            <PostText>{parse(post.content)}</PostText>
+            {/* if we have a featured image for this post let's display it */}
+            {featuredImage?.data && (
+              <FeaturedImage
+                image={featuredImage.data}
+                alt={featuredImage.alt}
+              />
+            )}
+          </PostSection>
 
-          <section itemProp="articleBody">{parse(post.content)}</section>
-           {/* if we have a featured image for this post let's display it */}
-           {featuredImage?.data && (
-             <FeaturedImage
-               image={featuredImage.data}
-               alt={featuredImage.alt}
-              
-             />
-           )}
-          <PrevNextList>
-            <ul>
+          <PrevNextNav>
+            <NextPostList>
               <li>
                 {previous && (
                   <Link to={previous.uri} rel="prev">
-                    ← {parse(previous.title)}
+                    ← {previous.title}
                   </Link>
                 )}
               </li>
               <li>
                 {next && (
                   <Link to={next.uri} rel="next">
-                    {parse(next.title)} →
+                    {next.title} →
                   </Link>
                 )}
               </li>
-            </ul>
-          </PrevNextList>
+            </NextPostList>
+          </PrevNextNav>
         </PostContent>
       </Wrapper>
     </Layout>
-
-    // <Layout>
-    //   <Seo title={post.title} description={post.excerpt} />
-
-    //   <article
-    //     className="blog-post"
-    //     itemScope
-    //     itemType="http://schema.org/Article"
-    //   >
-    //     <header>
-    //       <h1 itemProp="headline">{parse(post.title)}</h1>
-    //       XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-    //       <p>{post.date}</p>
-
-    //       {/* if we have a featured image for this post let's display it */}
-    //       {featuredImage?.data && (
-    //         <GatsbyImage
-    //           image={featuredImage.data}
-    //           alt={featuredImage.alt}
-    //           style={{ marginBottom: 50 }}
-    //         />
-    //       )}
-    //     </header>
-
-    //     {!!post.content && (
-    //       <section itemProp="articleBody">{parse(post.content)}</section>
-    //     )}
-
-    //     <hr />
-
-    //     <footer>
-    //       <Bio />
-    //     </footer>
-    //   </article>
-
-    // </Layout>
   )
 }
 
@@ -161,6 +144,16 @@ export const pageQuery = graphql`
                 placeholder: TRACED_SVG
                 layout: FULL_WIDTH
               )
+            }
+          }
+        }
+      }
+      ACF_Blog_Post_Image {
+        fieldGroupName
+        blogBackground {
+          localFile {
+            childImageSharp {
+              gatsbyImageData(formats: JPG, placeholder: BLURRED)
             }
           }
         }

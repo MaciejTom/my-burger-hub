@@ -1,8 +1,8 @@
-import styled from 'styled-components';
+import styled from "styled-components"
 import BackgroundImage from "gatsby-background-image"
+import { Link } from "gatsby"
 
 export const BurgerContainer = styled(BackgroundImage)`
-
   height: 100vh;
   max-height: 500px;
   background-position: center;
@@ -16,30 +16,28 @@ export const BurgerContainer = styled(BackgroundImage)`
   padding: 0 1rem;
   opacity: unset !important;
 
-  h1 {
-    font-size: clamp(3rem, 5vw, 5rem);
-  }
-
-  p {
-    margin-bottom: 1rem;
-    font-size: clamp(1rem, 3vw, 2rem);
-  }
-`;
+  
+`
+export const BurgerH1 = styled.h1`
+  font-size: clamp(3rem, 5vw, 5rem);
+`
+export const BurgerP = styled.p`
+  margin-bottom: 1rem;
+  font-size: clamp(1rem, 3vw, 2rem);
+`
 
 export const Overlay = styled.div`
   background: linear-gradient(to right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
-  
-  
-`;
+`
 
-
-export const BurgerButton = styled.button`
+export const BurgerButton = styled(Link)`
   font-size: 1.4rem;
   padding: 0.6rem 3rem;
   border: none;
   background: #ffc500;
   color: #000;
   transition: 0.2s ease-out;
+  text-decoration: none;
 
   &:hover {
     color: #fff;
@@ -47,4 +45,4 @@ export const BurgerButton = styled.button`
     transition: 0.2s ease-out;
     cursor: pointer;
   }
-`;
+`

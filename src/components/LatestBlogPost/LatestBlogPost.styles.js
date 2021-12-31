@@ -10,20 +10,21 @@ export const PostContainer = styled.div`
 export const PostWrapper = styled.div`
   max-width: 1180px;
   padding: 2rem;
-  margin: 0 auto;
- 
+  margin: 0 auto; 
   text-align: center;
-
-  h2 {
+`
+export const PostH2 = styled.h2`
     font-size: clamp(2rem, 2.5vw, 3rem);
     display: inline-block;
     box-shadow: 3px 5px #e9ba23;
-    padding: clamp(1rem, 2.5vw, 2rem);
+    padding: 0.5rem 1rem;
     margin: 0;
-  }
-  h4 {
+    border-radius: 3px 3px 35px 3px;
+  
+`
+export const PostH4 = styled.h4`
     font-size: clamp(1rem, 2.5vw, 1.5rem);
-  }
+  
 `
 export const BlogBtn = styled(Link)`
   font-size: 1.2rem;

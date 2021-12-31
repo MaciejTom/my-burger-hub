@@ -10,7 +10,7 @@ export const PostsContainer = styled.div`
   padding: 0 20px;
   max-width: 1300px;
   margin: 0 auto;
-  padding: 4rem 1rem;
+  padding: clamp(1rem, 2.5vw, 4rem) 1rem clamp(3rem, 2.5vw, 4rem) 1rem;
 `
 
 export const PostImg = styled(GatsbyImage)`
@@ -46,14 +46,16 @@ export const Post = styled.div`
   background: #0d0909;
   border-radius: 2px;
   @media (max-width: 600px) {
-      flex-direction: column;
+    flex-direction: column;
   }
- 
 `
 export const Text = styled.div`
   padding: 30px;
-  h3 {
-    font-size: clamp(1rem, 2.5vw, 1.7rem);
-    margin: 0 0 20px 0;
+  @media (max-width: 600px) {
+    text-align: center;
   }
+`
+export const PostH3 = styled.h3`
+  font-size: clamp(1rem, 2.5vw, 1.7rem);
+  margin: 0 0 20px 0;
 `
