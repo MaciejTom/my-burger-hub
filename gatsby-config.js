@@ -31,7 +31,7 @@ module.exports = {
       resolve: `gatsby-source-wordpress`,
       options: {
         // the only required plugin option for WordPress is the GraphQL url.
-        url: process.env.WPGRAPHQL_URL || `http://myburgerhub.local/graphql`,
+        url: process.env.WPGRAPHQL_URL || `https://my-burger-hub.000webhostapp.com/graphql`,
       },
     },
 
@@ -68,7 +68,7 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `content/assets/gatsby-icon.png`,
+        icon: `content/assets/burger-icon.jpg`,
       },
     },
    
