@@ -31,7 +31,7 @@ module.exports = {
       resolve: `gatsby-source-wordpress`,
       options: {
         // the only required plugin option for WordPress is the GraphQL url.
-        url: process.env.WPGRAPHQL_URL || `https://my-burger-hub.000webhostapp.com/graphql`,
+        url: process.env.WPGRAPHQL_URL || `https://dev-my-burger-hub.pantheonsite.io//graphql`,
       },
     },
 
