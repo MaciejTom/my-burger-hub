@@ -17,7 +17,7 @@ import parse from "html-react-parser"
 // import "../css/@wordpress/block-library/build-style/theme.css"
 
 import MenuHero from "../components/MenuHero"
-import Layout from "../components/layout"
+import Layout from "../components/Layout"
 import Seo from "../components/seo"
 
 const Wrapper = styled.div`

@@ -5,7 +5,7 @@ import styled from "styled-components"
 import { graphql } from "gatsby"
 import { Link } from "gatsby"
 //Components
-import Layout from "../components/layout"
+import Layout from "../components/Layout"
 import Seo from "../components/seo"
 
 const NotFoundContent = styled.div`
