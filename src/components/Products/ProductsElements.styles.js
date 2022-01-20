@@ -1,17 +1,17 @@
 import styled from "styled-components"
 import { GatsbyImage } from "gatsby-plugin-image"
-import {Link} from 'gatsby'
+import { Link } from "gatsby"
 
-export const ProductsContainer = styled.div`
+export const ProductsContainer = styled.section`
   min-height: 100vh;
-  padding: ${(props) => (props.full && !props.isBurger) ? "1rem" : "4rem"} calc((100vw - 1300px) / 2) 2rem calc((100vw - 1300px) / 2);
+  padding: ${props => (props.full && !props.isBurger ? "1rem" : "4rem")}
+    calc((100vw - 1300px) / 2) 2rem ;
   background: #150f0f;
   color: #fff;
 `
 
 export const ProductWrapper = styled.div`
   display: flex;
-
   flex-wrap: wrap;
   justify-content: center;
   margin: 0 auto;
@@ -19,7 +19,6 @@ export const ProductWrapper = styled.div`
 
 export const ProductCard = styled.div`
   margin: 0 2rem 2rem 2rem;
-
   line-height: 2;
   width: 300px;
 `
@@ -29,7 +28,7 @@ export const ProductImg = styled(GatsbyImage)`
   min-width: 300px;
   max-width: 100%;
   box-shadow: 9px 9px #fdc500;
-    border-radius: 3px 3px 35px 3px;
+  border-radius: 3px 3px 35px 3px;
 `
 
 export const ProductsHeading = styled.h2`
@@ -55,7 +54,7 @@ export const ProductInfo = styled.div`
 export const ProductDesc = styled.p`
   margin-bottom: 1rem;
   @media (min-width: 730px) {
-   min-height: ${props => (props.isBurger && "65px")} }
+   min-height: ${props => props.isBurger && "65px"} }
   }  
 `
 

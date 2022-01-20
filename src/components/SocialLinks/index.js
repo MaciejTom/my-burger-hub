@@ -22,20 +22,20 @@ export const SocialLinks = ({ socials }) => {
   }
 
   return socialKeys.map(name => {
-    if (name == "facebook" && socials[name]) {
+    if (name === "facebook" && socials[name]) {
       
       return socialLinks(name, <FaFacebook />)
     }
-    if (name == "twitter" && socials[name]) {
+    if (name === "twitter" && socials[name]) {
       return socialLinks(name, <FaTwitter />)
     }
-    if (name == "linkedin" && socials[name]) {
+    if (name === "linkedin" && socials[name]) {
       return socialLinks(name, <FaLinkedin />)
     }
-    if (name == "youtube" && socials[name]) {
+    if (name === "youtube" && socials[name]) {
       return socialLinks(name, <FaYoutube />)
     }
-    if (name == "instagram" && socials[name]) {
+    if (name === "instagram" && socials[name]) {
       return socialLinks(name, <FaInstagram />)
     }
   })

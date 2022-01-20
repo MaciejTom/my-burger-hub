@@ -6,7 +6,7 @@ import Navbar from "../Navbar"
 import Sidebar from "../Sidebar"
 //Styles
 import {
-  Overlay,
+  HeaderContainer,
   HeroContent,
   HeroItems,
   HeroH1,
@@ -40,7 +40,7 @@ const Hero = ({ location }) => {
   if (isHomePage) {
     return (
       <BackgroundImage {...bgImage}>
-        <Overlay>
+        <HeaderContainer>
           <Navbar toggle={toggle} isHomePage={isHomePage}/>
           <Sidebar isOpen={isOpen} toggle={toggle} />
           <HeroContent>
@@ -50,7 +50,7 @@ const Hero = ({ location }) => {
               <HeroBtn to="/menu">Place order</HeroBtn>
             </HeroItems>
           </HeroContent>
-        </Overlay>
+        </HeaderContainer>
       </BackgroundImage>
     )
   } else {

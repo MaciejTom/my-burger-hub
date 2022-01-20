@@ -7,12 +7,9 @@ import { UseSocialQuery } from "../../hooks/UseSocialQuery"
 
 import {
   FooterContainer,
-  FooterWrap,
-  SocialMedia,
-  SocialMediaWrap,
+  FooterWrapper,
   SocialLogo,
   SocialIcons,
-  SocialIconLink,
 } from "./Footer.styles"
 
 const Footer = () => {
@@ -28,16 +25,12 @@ const Footer = () => {
 
   return (
     <FooterContainer>
-      <FooterWrap>
-        <SocialMedia>
-          <SocialMediaWrap>
-            <SocialLogo to="/">{title}</SocialLogo>
-            <SocialIcons>
-              <SocialLinks socials={socials} />
-            </SocialIcons>
-          </SocialMediaWrap>
-        </SocialMedia>
-      </FooterWrap>
+      <FooterWrapper>
+        <SocialLogo to="/">{title}</SocialLogo>
+        <SocialIcons>
+          <SocialLinks socials={socials} />
+        </SocialIcons>
+      </FooterWrapper>
     </FooterContainer>
   )
 }

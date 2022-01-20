@@ -16,7 +16,7 @@ export const BurgerContainer = styled(BackgroundImage)`
   opacity: unset !important;
 `
 
-export const Overlay = styled.div`
+export const Overlay = styled.header`
   background: linear-gradient(to right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
 `
 export const MenuHeroH1 = styled.h1`

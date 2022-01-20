@@ -2,7 +2,7 @@ import styled from "styled-components"
 import BackgroundImage from "gatsby-background-image"
 import { Link } from "gatsby"
 
-export const BurgerContainer = styled(BackgroundImage)`
+export const Burger = styled(BackgroundImage)`
   height: 100vh;
   max-height: 500px;
   background-position: center;
@@ -26,7 +26,7 @@ export const BurgerP = styled.p`
   font-size: clamp(1rem, 3vw, 2rem);
 `
 
-export const Overlay = styled.div`
+export const BurgerContainer = styled.section`
   background: linear-gradient(to right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
 `
 

@@ -1,6 +1,6 @@
 import React from "react"
 //Styles
-import { BurgerContainer, BurgerButton, Overlay, BurgerH1, BurgerP } from "./BurgerOfTheDay.styles"
+import { Burger, BurgerContainer, BurgerButton, BurgerH1, BurgerP } from "./BurgerOfTheDay.styles"
 //GraphQL
 import { UseBurgerOTD } from "../../hooks/UseBurgerOTD"
 //Image plugins
@@ -17,13 +17,13 @@ const BurgerOfTheDay = () => {
   const bgImage = convertToBgImage(image)
 
   return (
-    <Overlay>
-    <BurgerContainer {...bgImage}>     
+    <BurgerContainer>
+    <Burger {...bgImage}>     
         <BurgerH1>{data.burgerText}</BurgerH1>
         <BurgerP>{data.burgerSubtext}</BurgerP>
         <BurgerButton to="/menu">Order Now</BurgerButton>      
+    </Burger>
     </BurgerContainer>
-    </Overlay>
   )
 }
 

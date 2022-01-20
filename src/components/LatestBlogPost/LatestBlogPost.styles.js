@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import { Link } from "gatsby"
 
-export const PostContainer = styled.div`
+export const PostContainer = styled.section`
   background-color: black;
   color: white;
   padding: 3rem 2rem;
@@ -22,8 +22,9 @@ export const PostH2 = styled.h2`
     border-radius: 3px 3px 35px 3px;
   
 `
-export const PostH4 = styled.h4`
+export const PostH3 = styled.h3`
     font-size: clamp(1rem, 2.5vw, 1.5rem);
+    padding-bottom: 2rem;
   
 `
 export const BlogBtn = styled(Link)`

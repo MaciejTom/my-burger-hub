@@ -34,7 +34,7 @@ export const Icon = styled.div`
   outline: none;
 `
 
-export const SidebarMenu = styled.div`
+export const SidebarMenu = styled.nav`
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(${({ menuLength }) => menuLength}, 80px);
@@ -69,12 +69,8 @@ export const SideBtnWrap = styled.div`
 
 export const SidebarRoute = styled(Link)`
   background: #e31837;
-  white-space: nowrap;
-  padding: 16px 64px;
+  padding: 1rem 4rem;
   color: #fff;
-  font-size: 16px;
-  outline: none;
-  border: none;
   cursor: pointer;
   transition: 0.2s ease-in-out;
   text-decoration: none;

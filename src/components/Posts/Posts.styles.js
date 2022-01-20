@@ -2,12 +2,12 @@ import styled from "styled-components"
 import { GatsbyImage } from "gatsby-plugin-image"
 import { Link } from "gatsby"
 
-export const PostsWrapper = styled.div`
+export const  PostsWrapper = styled.section`
   background: black;
   color: white;
 `
-export const PostsContainer = styled.div`
-  padding: 0 20px;
+export const Container = styled.div`
+  padding: 0 1.2rem;
   max-width: 1300px;
   margin: 0 auto;
   padding: clamp(1rem, 2.5vw, 4rem) 1rem clamp(3rem, 2.5vw, 4rem) 1rem;
@@ -40,8 +40,8 @@ export const BlogBtn = styled(Link)`
   }
 `
 
-export const Post = styled.div`
-  padding: 20px;
+export const Post = styled.article`
+  padding: 1.5rem 1rem;
   display: flex;
   background: #0d0909;
   border-radius: 2px;
@@ -50,12 +50,12 @@ export const Post = styled.div`
   }
 `
 export const Text = styled.div`
-  padding: 30px;
+  padding: 1.8rem;
   @media (max-width: 600px) {
     text-align: center;
   }
 `
-export const PostH3 = styled.h3`
+export const PostH2 = styled.h2`
   font-size: clamp(1rem, 2.5vw, 1.7rem);
-  margin: 0 0 20px 0;
+  margin: 0 0 1.2rem 0;
 `

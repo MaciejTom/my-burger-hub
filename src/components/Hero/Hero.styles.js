@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import {Link} from 'gatsby';
 
-export const Overlay = styled.div`
+export const HeaderContainer = styled.header`
   background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1));
   padding: 0 2rem;
 `;
@@ -42,6 +42,7 @@ export const HeroH1 = styled.h1`
 export const HeroP = styled.p`
   font-size: clamp(2rem, 2.5vw, 3rem);
   margin-bottom: 2rem;
+  font-weight: 500;
 `;
 
 export const HeroBtn = styled(Link)`

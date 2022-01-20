@@ -23,6 +23,13 @@ export const NavLink = styled(Link)`
     top: 24px;
     left: 25px;
   }
+
+  @media screen and (max-width: 350px) {
+    position: absolute;
+    top: 30px;
+    left: 25px;
+    font-size: 1.5rem;
+  }
 `
 
 export const NavIcon = styled.div`
