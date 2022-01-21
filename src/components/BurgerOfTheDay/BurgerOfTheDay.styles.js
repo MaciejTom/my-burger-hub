@@ -22,7 +22,7 @@ export const BurgerH1 = styled.h1`
   font-size: clamp(3rem, 5vw, 5rem);
 `
 export const BurgerP = styled.p`
-  margin-bottom: 1rem;
+  margin-bottom: 1em;
   font-size: clamp(1rem, 3vw, 2rem);
 `
 
@@ -32,7 +32,7 @@ export const BurgerContainer = styled.section`
 
 export const BurgerButton = styled(Link)`
   font-size: 1.4rem;
-  padding: 0.6rem 3rem;
+  padding: 0.4em 2em;
   border: none;
   background: #ffc500;
   color: #000;

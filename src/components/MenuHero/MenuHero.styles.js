@@ -12,7 +12,7 @@ export const BurgerContainer = styled(BackgroundImage)`
   align-items: center;
   color: #fff;
   text-align: center;
-  padding: 0 1rem;
+  padding: 0 1em;
   opacity: unset !important;
 `
 

@@ -8,6 +8,7 @@ import {
   BlogBtn,
   PostH2,
   PostH3,
+  Text
 } from "./LatestBlogPost.styles"
 
 const LatestBlogPost = () => {
@@ -18,7 +19,7 @@ const LatestBlogPost = () => {
       <PostWrapper>
         <PostH2>Latest Blog Post</PostH2>
         <PostH3>{data.allWpPost.edges[0].node.title}</PostH3>
-        <div
+        <Text
           dangerouslySetInnerHTML={{
             __html: data.allWpPost.edges[0].node.excerpt,
           }}

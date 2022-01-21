@@ -4,8 +4,7 @@ import { Link } from "gatsby"
 
 export const ProductsContainer = styled.section`
   min-height: 100vh;
-  padding: ${props => (props.full && !props.isBurger ? "1rem" : "4rem")}
-    calc((100vw - 1300px) / 2) 2rem ;
+  padding: ${props => (props.full && !props.isBurger ? "1em" : "4em")} 1em 2em ;
   background: #150f0f;
   color: #fff;
 `
@@ -18,7 +17,7 @@ export const ProductWrapper = styled.div`
 `
 
 export const ProductCard = styled.div`
-  margin: 0 2rem 2rem 2rem;
+  margin: 0 2em 2em 2em;
   line-height: 2;
   width: 300px;
 `
@@ -34,12 +33,13 @@ export const ProductImg = styled(GatsbyImage)`
 export const ProductsHeading = styled.h2`
   font-size: clamp(2rem, 2.5vw, 3rem);
   text-align: center;
-  margin-bottom: 5rem;
+  margin-bottom: 2em;
 `
 
-export const ProductTitle = styled.h2`
+export const ProductTitle = styled.h3`
   font-weight: 400;
   font-size: 1.5rem;
+  margin: 0.4em 0;
 `
 
 export const ProductInfo = styled.div`
@@ -47,25 +47,25 @@ export const ProductInfo = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 2rem;
+  padding: 2em;
   text-align: center;
 `
 
 export const ProductDesc = styled.p`
-  margin-bottom: 1rem;
+  margin-bottom: 1em;
   @media (min-width: 730px) {
    min-height: ${props => props.isBurger && "65px"} }
   }  
 `
 
 export const ProductPrice = styled.p`
-  margin-bottom: 1rem;
+  margin: 0.3em;
   font-size: 2rem;
 `
 
 export const ProductButton = styled(Link)`
   font-size: 1rem;
-  padding: 0.7rem 4rem;
+  padding: 0.7em 4em;
   border: none;
   background: #e31837;
   color: #fff;

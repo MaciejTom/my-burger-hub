@@ -6,7 +6,7 @@ export const FooterContainer = styled.footer`
 `
 
 export const FooterWrapper = styled.div`
-  padding: 1.5rem;
+  padding: 1.5em;
   display: flex;
   align-items: center;
   max-width: 1300px;

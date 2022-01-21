@@ -2,15 +2,15 @@ import styled from "styled-components"
 import { GatsbyImage } from "gatsby-plugin-image"
 import { Link } from "gatsby"
 
-export const  PostsWrapper = styled.section`
+export const PostsWrapper = styled.section`
   background: black;
   color: white;
 `
 export const Container = styled.div`
-  padding: 0 1.2rem;
+  padding: 0 1.2em;
   max-width: 1300px;
   margin: 0 auto;
-  padding: clamp(1rem, 2.5vw, 4rem) 1rem clamp(3rem, 2.5vw, 4rem) 1rem;
+  padding: clamp(1em, 2.5vw, 4em) 1rem clamp(3em, 2.5vw, 4em) 1em;
 `
 
 export const PostImg = styled(GatsbyImage)`
@@ -23,13 +23,13 @@ export const PostImg = styled(GatsbyImage)`
 `
 export const BlogBtn = styled(Link)`
   font-size: 1.2rem;
-  padding: 0.5rem 2rem;
+  padding: 0.5em 2em;
   border: none;
   background: red;
   color: #fff;
   transition: 0.2s ease-out;
   text-decoration: none;
-  margin-top: 1rem;
+  margin-top: 1em;
   display: inline-block;
 
   &:hover {
@@ -41,12 +41,19 @@ export const BlogBtn = styled(Link)`
 `
 
 export const Post = styled.article`
-  padding: 1.5rem 1rem;
+  padding: 1.5em 1em;
   display: flex;
   background: #0d0909;
   border-radius: 2px;
+  padding-right: 2em;
   @media (max-width: 600px) {
     flex-direction: column;
+    padding: 1.5em 1em 2.5em;
+  }
+
+  border-bottom: 1px #646464 solid;
+  &:last-of-type {
+    border-bottom: none;
   }
 `
 export const Text = styled.div`
@@ -57,5 +64,5 @@ export const Text = styled.div`
 `
 export const PostH2 = styled.h2`
   font-size: clamp(1rem, 2.5vw, 1.7rem);
-  margin: 0 0 1.2rem 0;
+  margin: 0 0 1.2em 0;
 `
