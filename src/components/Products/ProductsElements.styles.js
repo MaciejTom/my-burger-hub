@@ -14,6 +14,7 @@ export const ProductWrapper = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   margin: 0 auto;
+  max-width: 1300px;
 `
 
 export const ProductCard = styled.div`
